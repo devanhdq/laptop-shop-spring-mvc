@@ -13,4 +13,9 @@ public class HomeController {
        return "hello";
    }
 
+   @RequestMapping("/admin/user")
+    public String getCreateUserPage(Model model) {
+        return "admin/user/create";
+    }
+
 }
