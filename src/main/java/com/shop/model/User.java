@@ -1,87 +1,53 @@
 package com.shop.model;
 
+import jakarta.persistence.*;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 
+import java.util.List;
 
+import static jakarta.persistence.FetchType.LAZY;
+
+@Entity
+@Table(name = "users")
+@Getter
+@Setter
+@NoArgsConstructor
+@ToString
 public class User {
-   private long id;
-   private String email;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String email;
+
     private String password;
+
     private String fullName;
+
     private String phoneNumber;
+
     private String address;
 
-    public long getId() {
-        return id;
-    }
+    private String avatar;
 
-    public void setId(long id) {
-        this.id = id;
-    }
+    @ManyToOne(fetch = LAZY)
+    @JoinColumn(name = "role_id")
+    private Role role;
 
-    public String getEmail() {
-        return email;
-    }
+    @OneToMany(mappedBy = "user")
+    private List<Order> orders;
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getFullName() {
-        return fullName;
-    }
-
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
-    }
-
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public User() {
-    }
-
-    public User(String email, String password, String fullName, String phoneNumber, String address) {
+    public User(String email, String password, String fullName, String phoneNumber, String address, String avatar) {
         this.email = email;
         this.password = password;
         this.fullName = fullName;
         this.phoneNumber = phoneNumber;
         this.address = address;
-    }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", email='" + email + '\'' +
-                ", password='" + password + '\'' +
-                ", fullName='" + fullName + '\'' +
-                ", phoneNumber='" + phoneNumber + '\'' +
-                ", address='" + address + '\'' +
-                '}';
+        this.avatar = avatar;
     }
 }
 

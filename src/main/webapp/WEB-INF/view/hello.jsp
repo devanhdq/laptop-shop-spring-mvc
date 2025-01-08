@@ -23,6 +23,9 @@
 <h4>
     <c:out value="${message}"/>
 </h4>
+<a href="/admin">
+    <button type="button" class="btn btn-primary">Admin Page</button>
+</a>
 <!-- Latest compiled JavaScript -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
