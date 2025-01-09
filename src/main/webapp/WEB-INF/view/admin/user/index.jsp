@@ -16,7 +16,7 @@
             href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css"
             rel="stylesheet"
     />
-    <link href="css/styles.css" rel="stylesheet"/>
+    <link href="/css/styles.css" rel="stylesheet"/>
     <script
             src="https://use.fontawesome.com/releases/v6.3.0/js/all.js"
             crossorigin="anonymous"
@@ -29,7 +29,7 @@
     <jsp:include page="../layout/sidebar.jsp"/>
     <div id="layoutSidenav_content">
         <main>
-          <h1>Order</h1>
+            <h1>Uers</h1>
         </main>
         <jsp:include page="../layout/footer.jsp"/>
     </div>
@@ -38,17 +38,17 @@
         crossorigin="anonymous">
 
 </script>
-<script src="js/scripts.js"></script>
+<script src="/js/scripts.js"></script>
 <script
         src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"
         crossorigin="anonymous"
 ></script>
-<script src="assets/demo/chart-area-demo.js"></script>
-<script src="assets/demo/chart-bar-demo.js"></script>
+<script src="/js/chart-area-demo.js"></script>
+<script src="/js/chart-bar-demo.js"></script>
 <script
         src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js"
         crossorigin="anonymous"
 ></script>
-<script src="js/datatables-simple-demo.js"></script>
+<script src="/js/datatables-simple-demo.js"></script>
 </body>
 </html>

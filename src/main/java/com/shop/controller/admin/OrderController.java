@@ -11,6 +11,6 @@ public class OrderController {
 
     @GetMapping
     public String list() {
-        return "admin/order/order";
+        return "admin/order/index";
     }
 }
